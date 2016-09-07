@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/calendar.v1.js" charset="utf-8"></script>
+    <link href="css/calendar.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepickerdemo2.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="DetailCalWrap" >
+      <div class="autoCalendar">
+        <div class="YM fl"><i class="calendar_left forbid"></i><i class="calendar_right"></i></div>
+        <div class="dates_wrap"></div>
+      </div>
+    </div>
+    <div class="CalInfoPanel">
+      <p class="title">
+        已选日期
+      </p>
+      <ul id="dateinfo" class="list-group clearfix">
+
+      </ul>
+      <input type="button" name="name" id="btnDateSubmit" class="btn btn-success btn-block" value="确认日期">
+    </div>
+<script type="text/javascript">
+//价格日历控件--详情页面--调用
+var calendarData = {
+    "ResultCode": 0,
+    "Message": null,
+    "SelectDataList":["2016-09-22", "2016-09-29", "2016-09-30","2016-10-05"
+    ]
+};
+var priceData = calendarData.PriceDataList;
+// var mydatepicker= calendarPrice($('.DetailCalWrap'), priceData,true);
+var mdp= $('.DetailCalWrap').calendarPrice({
+  //priceData:priceData,
+  multiselect:true,
+  datelist:calendarData.SelectDataList,
+  dateInfoPanel:"#dateinfo"
+});
+
+$("#btnDateSubmit").click(function(){
+  console.log('当前选中的日期为:'+mdp);
+})
+</script>
+  </body>
+</html>

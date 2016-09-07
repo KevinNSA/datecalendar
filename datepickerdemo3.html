@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/calendar.v2.js" charset="utf-8"></script>
+    <link href="css/calendar.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepickerdemo2.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="DetailCalWrap">
+    </div>
+    <br>
+    <br>
+    <input type="button" name="name" id="btnDateSubmit" class="btn btn-success btn-block" value="确认日期">
+    <input type="button" name="name" id="btnAddDateSubmit" class="btn btn-primary btn-block" value="增加新日期">
+
+    <script type="text/javascript">
+        //价格日历控件--详情页面--调用
+        var calendarData = {
+            "ResultCode": 0,
+            "Message": null,
+            "SelectDataList": ["2016-09-22", "2016-09-29", "2016-09-30", "2016-10-05"],
+            "LockDataList": ["2016-09-07", "2016-09-08", "2016-10-01", "2016-10-02"]
+        };
+
+        var mdp = $('.DetailCalWrap').DateCalendar({
+            dateList: calendarData.SelectDataList,
+            showInfoPanel: true,
+            infoPanelID:'dateinfo',
+            isLock: true,
+            lockDateList: calendarData.LockDataList,
+        });
+
+
+        $("#btnDateSubmit").click(function() {
+            console.log(mdp);
+            console.log('当前选中的日期为:' + mdp.printDateList().dateList);
+            console.log('当前锁定的日期为:' + mdp.printDateList().lockDateList);
+        })
+
+        $("#btnAddDateSubmit").click(function() {
+            mdp.addDay(["2016-09-22", "2016-09-29", "2016-09-08", "2016-09-09", "2016-10-03", "2016-10-04"]);
+        })
+
+
+        // var testsort=["2016-09-9","2016-09-09","2016-09-8","2016-09-08"];
+        // testsort=["a","aa"];
+        // testsort.sort();
+        // console.log(testsort);
+    </script>
+
+</body>
+
+</html>

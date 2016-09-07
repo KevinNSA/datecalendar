@@ -1,0 +1,57 @@
+/*自定义css*/
+.DetailCalWrap{
+  width:700px;
+}
+
+.DetailCalWrap .lock{
+  background:#d9534f;
+  border-color: #d43f3a;
+  color:#fff;
+}
+
+.CalInfoPanel {
+    float: left;
+    width: 400px;
+    margin-left:10px;
+}
+
+.CalInfoPanel>.title {
+    text-align: center;
+    line-height: 44px;
+    height: 44px;
+    margin: 0;
+}
+
+/*bootstrap.css 增强*/
+.CalInfoPanel .list-group-item{
+  width:50%;
+  float:left;
+}
+
+.CalInfoPanel .list-group-item:first-child
+{
+  border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+}
+.CalInfoPanel .list-group-item:last-child
+{
+  border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+}
+
+.badge-drange{
+  background-color: #d9534f;
+    border-color: #d43f3a;
+    cursor: pointer;
+}
+.badge-drange:hover{
+  background-color: #c9302c;
+      border-color: #ac2925;
+}
+
+
+/*通用CSS*/
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
