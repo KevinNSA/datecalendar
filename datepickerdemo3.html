@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="js/jquery.js" charset="utf-8"></script>
-    <script src="js/calendar.v2.js" charset="utf-8"></script>
+    <script src="js/calendar.v3.js" charset="utf-8"></script>
     <link href="css/calendar.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/datepickerdemo2.css" rel="stylesheet">
@@ -13,7 +13,11 @@
 
 <body>
 
-    <div class="DetailCalWrap">
+    <div id="d1" class="DetailCalWrap">
+    </div>
+    <br>
+    <br>
+    <div id="d2" class="DetailCalWrap">
     </div>
     <br>
     <br>
@@ -29,7 +33,7 @@
             "LockDataList": ["2016-09-07", "2016-09-08", "2016-10-01", "2016-10-02"]
         };
 
-        var mdp = $('.DetailCalWrap').DateCalendar({
+        var mdp = $('#d1').DateCalendar({
             dateList: calendarData.SelectDataList,
             showInfoPanel: true,
             infoPanelID:'dateinfo',
@@ -37,7 +41,7 @@
             lockDateList: calendarData.LockDataList,
         });
 
-
+      
         $("#btnDateSubmit").click(function() {
             console.log(mdp);
             console.log('当前选中的日期为:' + mdp.printDateList().dateList);
@@ -47,7 +51,6 @@
         $("#btnAddDateSubmit").click(function() {
             mdp.addDay(["2016-09-22", "2016-09-29", "2016-09-08", "2016-09-09", "2016-10-03", "2016-10-04"]);
         })
-
 
         // var testsort=["2016-09-9","2016-09-09","2016-09-8","2016-09-08"];
         // testsort=["a","aa"];
